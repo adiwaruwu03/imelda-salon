@@ -59,21 +59,85 @@
       margin-top: 12px;
     }
 
+    /* Tombol biasa (untuk bagian lain) */
     .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 34px;
-      background: #d6336c;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 40px;
-      font-weight: bold;
-      transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 34px;
+    background: #d6336c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* CONTAINER TOMBOL GAMBAR */
+    .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    }
+
+    /* TOMBOL DENGAN GAMBAR (CLASS BARU) */
+    .btn-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    text-align: center;
+    }
+
+    /* Gambar di dalam tombol */
+    .btn-image img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    transition: transform 0.3s;
+    }
+
+    /* Efek hover */
+    .btn-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: #d6336c;
+    }
+
+    .btn-image:hover img {
+    transform: scale(1.1);
+    }
+
+    /* Warna khusus untuk tiap platform */
+    .btn-image.whatsapp:hover {
+    border-color: #25D366;
+    }
+
+    .btn-image.instagram:hover {
+    border-color: #E4405F;
+    }
+
+    .btn-image.tiktok:hover {
+    border-color: #000000;
     }
 
     section {
@@ -125,25 +189,25 @@
     }
 
     /* GALERI */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* Ubah 3fr jadi 1fr */
-      gap: 60px;
-    }
-    
-    .gallery img {
-      width: 100%;
-      height: 350px; /* Tinggi lebih besar untuk potret */
-      object-fit: cover;
-      border-radius: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      aspect-ratio: 2/3; /* Rasio potret (2:3 = lebar:tinggi) */
-    }
-    
-    .gallery img:hover {
-      transform: scale(1.06);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ubah 3fr jadi 1fr */
+  gap: 60px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 350px; /* Tinggi lebih besar untuk potret */
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  aspect-ratio: 2/3; /* Rasio potret (2:3 = lebar:tinggi) */
+}
+
+.gallery img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
 
     footer {
       background: #f7b7c4;
@@ -175,7 +239,6 @@
   <header>
     <h1>IMELDA SALON</h1>
     <p>Salon Kecantikan & Rias Pengantin Profesional</p>
-    <a href="https://wa.me/6282285310686" class="btn">Booking via WhatsApp</a>
   </header>
 
   <section>
@@ -206,7 +269,8 @@
       </div>
     </div>
   </section>
-
+  
+  
   <section>
     <h2>Galeri</h2>
     <div class="gallery">
@@ -218,6 +282,33 @@
       <img src="img/galeri.jpeg" alt="Makeup Imelda Salon">
     </div>
   </section>
+
+  <section>
+    <h2>Contact Us</h2>
+  
+    <!-- Gunakan tombol biasa jika perlu -->
+    <!-- <a href="#" class="btn">Tombol Biasa</a> -->
+  
+     <div class="social-buttons">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6282285310686" class="btn-image whatsapp">
+      <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp">
+      <span>WhatsApp</span>
+    </a>
+    
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/imelda_salon16" target="_blank" class="btn-image instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      <span>Instagram</span>
+    </a>
+    
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@imeldasalon4" target="_blank" class="btn-image tiktok">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+      <span>TikTok</span>
+    </a>
+    </div>
+    </section>
 
   <footer>
     <p>📞 WhatsApp: 0822-8531-0686</p>
